@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Webchat Client</title>
+	<link href="public/styles.css" rel="stylesheet" type="text/css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header class="header">Webchat Client</header>
+	<div class="center">
+		<div class="chatbox">
+			<div class="wrap">
+				<span id="chattext"></span>
+</div>
+			<div id="userbox">
+				Users:
+				<div id="userlist">
+
+				</div>
+			</div>
+		</div>
+		<form id="joinbox">
+			<label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <input class="submit" type="submit" value="Join">
+    </form>
+    <p id="status"></p>
+    <form id="chatform">
+      <input type="text" id="message" name="message">
+      <input class="submit" type="submit" onclick="" value="Send">
+    </form>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+	<script src="public/script.js"></script>
+</body>
+
+</html>
