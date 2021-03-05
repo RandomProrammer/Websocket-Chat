@@ -1,6 +1,6 @@
 {
-    "name": "Webchat",
-    "short_name": "Webchat",
+    "name": "Websocket Chat",
+    "short_name": "Websocket",
     "icons": [
         {
             "src": "/public/favicons/android-chrome-192x192.png",
