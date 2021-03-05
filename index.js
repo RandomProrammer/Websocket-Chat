@@ -18,7 +18,6 @@ httpserver.listen(3000);
 router.get("/", function(req, res) {
   res.sendFile(path + "index.html");
 });
-
 app.use("/", router);
 
 io.on('connection', (socket) => { //When user connects
@@ -39,6 +38,16 @@ io.on('connection', (socket) => { //When user connects
       delete usernames[socket.id];
     } else {
       console.log("user disconnected")
+    };
+
+  });
+  socket.on('sendMsg', (msg) => {
+    let name = usernames[socket.id];
+    if (name) {
+      console.log(name + ' sent a message');
+      io.sockets.emit('messageRecived', `${name}: ${msg}`);
+    } else {
+      console.log("No Name for client")
     };
 
   });

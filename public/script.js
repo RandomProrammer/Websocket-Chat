@@ -74,3 +74,13 @@ socket.on('disconnect', function() {
   removeAllChildNodes(userList);
   removeAllChildNodes(chatText);
 });
+chatForm.addEventListener('submit', function(e) {
+  	e.preventDefault();
+	let chatIn = chatForm.childNodes[1].value;
+  	let invistest = chatIn.replace(/\s/g, '');
+ 	if (invistest === "") {
+    	return
+  	};
+	socket.emit('sendMsg', chatIn);
+	chatForm.childNodes[1].value = "";
+});
